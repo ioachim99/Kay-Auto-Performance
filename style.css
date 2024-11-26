@@ -10,7 +10,159 @@
 body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
+    background-color: #f5f5f5;/* Font and Reset CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
     background-color: #f5f5f5;
+    line-height: 1.6;
+}
+
+header {
+    position: fixed; /* Fixează header-ul în partea de sus */
+    top: 0; /* Header-ul este vizibil permanent */
+    left: 0;
+    width: 100%; /* Acoperă întreaga lățime a paginii */
+    background-color: #333; /* Fundal pentru header */
+    color: #fff; /* Text alb */
+    z-index: 1000; /* Asigură că header-ul este deasupra altor elemente */
+    display: flex; /* Flexbox pentru aranjarea elementelor */
+    justify-content: space-between; /* Logoul și meniul sunt la capete opuse */
+    align-items: center; /* Centrează vertical elementele */
+    padding: 1rem 2rem; /* Adaugă spațiu în interior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adaugă o umbră ușoară */
+    transition: none; /* Elimină orice efect de tranziție */
+}
+
+.logo {
+    width: 120px; /* Dimensiunea logoului */
+}
+
+nav ul {
+    list-style: none; /* Elimină punctele implicite ale listelor */
+    display: flex; /* Elemente afișate pe orizontală */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 2rem; /* Spațiu între elementele meniului */
+}
+
+nav ul li a {
+    color: #fff; /* Text alb */
+    text-decoration: none; /* Elimină sublinierea textului */
+    font-weight: bold; /* Text bold pentru vizibilitate */
+    transition: color 0.3s; /* Tranziție pentru schimbarea culorii la hover */
+}
+
+nav ul li a:hover {
+    color: #e67300; /* Culoare portocalie la hover */
+}
+
+#language-switcher {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff; /* Fundal alb pentru selector */
+    color: #333; /* Text negru */
+    cursor: pointer; /* Cursor pointer */
+}
+
+/* Secțiunea generală pentru servicii */
+.section-padding {
+    display: flex; /* Creează layout flexibil */
+    flex-wrap: wrap; /* Permite rearanjarea pe dispozitive mici */
+    justify-content: space-between; /* Spațiere între imagine și text */
+    align-items: flex-start; /* Aliniere sus */
+    gap: 1.5rem; /* Spațiu între elemente */
+    max-width: 1200px; /* Lățime maximă pentru conținut */
+    margin: 2rem auto; /* Centrare orizontală */
+    padding: 2rem;
+    background-color: #fff;
+}
+
+/* Imaginea din secțiunea de servicii */
+.service-image {
+    max-width: 400px; /* Lățime maximă pentru imagine */
+    width: 100%; /* Ajustare la dimensiunea containerului */
+    height: auto; /* Păstrează proporțiile imaginii */
+    border-radius: 10px; /* Colțuri rotunjite */
+    flex: 1 1 40%; /* Imaginea ocupă 40% din spațiu */
+}
+
+/* Textul din secțiunea de servicii */
+.service-description {
+    flex: 1 1 60%; /* Textul ocupă restul de 60% */
+    text-align: left; /* Text aliniat la stânga */
+    font-size: 1rem;
+    line-height: 1.6; /* Spațiere între linii */
+    color: #333;
+}
+
+.service-description h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.service-description p {
+    margin-bottom: 1rem;
+}
+
+.service-description ul {
+    list-style: disc; /* Marcatori tip punct */
+    margin-left: 1.5rem; /* Spațiu pentru listă */
+    margin-top: 1rem;
+}
+
+.service-description ul li {
+    margin-bottom: 0.5rem; /* Spațiu între elementele listei */
+}
+
+/* Media Queries pentru responsive */
+
+/* Pentru dispozitive sub 768px (tabletă) */
+@media (max-width: 768px) {
+    .section-padding {
+        flex-direction: column; /* Imaginea deasupra textului */
+        text-align: center; /* Text centrat */
+        align-items: center;
+    }
+
+    .service-image {
+        max-width: 100%; /* Imaginea ocupă lățimea completă */
+        margin-bottom: 1rem; /* Spațiu sub imagine */
+    }
+
+    .service-description {
+        text-align: center; /* Text centrat */
+    }
+}
+
+/* Pentru dispozitive sub 480px (mobil) */
+@media (max-width: 480px) {
+    .service-description h2 {
+        font-size: 1.5rem; /* Font redus pentru titluri */
+    }
+
+    .service-description p {
+        font-size: 0.9rem; /* Font redus pentru text */
+    }
+
+    .section-padding {
+        padding: 1.5rem; /* Spațiere redusă */
+    }
+}
+
     line-height: 1.6;
 }
 
