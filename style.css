@@ -204,3 +204,10 @@ footer {
         height: auto;
     }
 }
+.service-image {
+    width: 100%;         /* Ajustează lățimea la containerul secțiunii */
+    max-width: 400px;    /* Setează o lățime maximă pentru a nu deveni prea mare */
+    height: auto;        /* Păstrează proporțiile corecte ale imaginii */
+    display: block;
+    margin: 20px auto;   /* Centrează imaginea cu un spațiu de 20px de jur împrejur */
+}
