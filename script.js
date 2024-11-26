@@ -80,11 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentPath = currentPath.replace(/-(en|ro)\.html/, `-${selectedLang}.html`);
             } else {
                 // Handle index.html without language code
-                if (currentPath.endsWith('index.html')) {
-                    currentPath = currentPath.replace('index.html', `index-${selectedLang}.html`);
-                } else {
-                    // Default case for root path without index.html
-                    currentPath += `index-${selectedLang}.html`;
+                if (currentPath.endsWith('index.html') || currentPath === '/') {
+                    if (selectedLang === 'ro') {
+                        currentPath = '/index.html'; // Default Romanian page
+                    } else {
+                        currentPath = '/index-en.html'; // Redirect to English version
+                    }
                 }
             }
 
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Initial translation based on default language
-        const currentLang = languageSwitcher.value || (window.location.pathname.includes('index.html') ? 'ro' : 'en');
+        const currentLang = languageSwitcher.value || (window.location.pathname.includes('index-en.html') ? 'en' : 'ro');
         translatePage(currentLang);
     }
 
@@ -119,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     let lastScrollY = window.scrollY;
     const header = document.querySelector('header');
@@ -134,4 +136,3 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollY = window.scrollY;
     });
 });
-
