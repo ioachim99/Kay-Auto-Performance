@@ -10,18 +10,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
-    background-color: #f5f5f5;/* Font and Reset CSS */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
     background-color: #f5f5f5;
     line-height: 1.6;
 }
@@ -39,7 +27,6 @@ header {
     align-items: center; /* Centrează vertical elementele */
     padding: 1rem 2rem; /* Adaugă spațiu în interior */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adaugă o umbră ușoară */
-    transition: none; /* Elimină orice efect de tranziție */
 }
 
 .logo {
@@ -78,6 +65,40 @@ nav ul li a:hover {
     cursor: pointer; /* Cursor pointer */
 }
 
+.hero {
+    background: url('images/background.png') no-repeat center center; /* Asigură-te că background.jpg este în folderul images */
+    background-size: cover; /* Se va extinde pentru a acoperi întreaga secțiune */
+    color: #ffffff; /* Schimbă culoarea textului pentru a fi lizibil pe fundal */
+    padding: 100px 20px; /* Adaugă spațiu pentru a crea un efect vizual plăcut */
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Stiluri pentru secțiunea de servicii */
 .section-padding {
     display: flex; /* Creează layout flexibil */
     flex-wrap: wrap; /* Permite rearanjarea pe dispozitive mici */
@@ -88,7 +109,7 @@ nav ul li a:hover {
     max-width: 1200px; /* Lățime maximă */
 }
 
-/* Stil pentru imagine */
+/* Imaginea din secțiunea de servicii */
 .service-image {
     max-width: 350px; /* Lățime maximă pentru imagine */
     width: 100%; /* Ajustare la dimensiunea containerului */
@@ -97,7 +118,7 @@ nav ul li a:hover {
     margin: 0 auto; /* Centrează imaginea */
 }
 
-/* Stil pentru descriere */
+/* Textul din secțiunea de servicii */
 .service-description {
     flex: 1; /* Textul ocupă restul spațiului */
     text-align: left; /* Text aliniat la stânga */
@@ -158,157 +179,5 @@ nav ul li a:hover {
 
     .section-padding {
         padding: 1.5rem; /* Spațiere redusă */
-    }
-}
-
-
-header {
-    position: fixed; /* Fixează header-ul în partea de sus */
-    top: 0; /* Header-ul este vizibil permanent */
-    left: 0;
-    width: 100%; /* Acoperă întreaga lățime a paginii */
-    background-color: #333; /* Fundal pentru header */
-    color: #fff; /* Text alb */
-    z-index: 1000; /* Asigură că header-ul este deasupra altor elemente */
-    display: flex; /* Flexbox pentru aranjarea elementelor */
-    justify-content: space-between; /* Logoul și meniul sunt la capete opuse */
-    align-items: center; /* Centrează vertical elementele */
-    padding: 1rem 2rem; /* Adaugă spațiu în interior */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adaugă o umbră ușoară */
-    transition: none; /* Elimină orice efect de tranziție */
-}
-
-.logo {
-    width: 120px; /* Dimensiunea logoului */
-}
-
-nav ul {
-    list-style: none; /* Elimină punctele implicite ale listelor */
-    display: flex; /* Elemente afișate pe orizontală */
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-left: 2rem; /* Spațiu între elementele meniului */
-}
-
-nav ul li a {
-    color: #fff; /* Text alb */
-    text-decoration: none; /* Elimină sublinierea textului */
-    font-weight: bold; /* Text bold pentru vizibilitate */
-    transition: color 0.3s; /* Tranziție pentru schimbarea culorii la hover */
-}
-
-nav ul li a:hover {
-    color: #e67300; /* Culoare portocalie la hover */
-}
-
-#language-switcher {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    background-color: #fff; /* Fundal alb pentru selector */
-    color: #333; /* Text negru */
-    cursor: pointer; /* Cursor pointer */
-}
-
-.hero {
-    background: url('images/background.png') no-repeat center center; /* Asigură-te că background.jpg este în folderul images */
-    background-size: cover; /* Se va extinde pentru a acoperi întreaga secțiune */
-    color: #ffffff; /* Schimbă culoarea textului pentru a fi lizibil pe fundal */
-    padding: 100px 20px; /* Adaugă spațiu pentru a crea un efect vizual plăcut */
-    text-align: center;
-    position: relative;
-}
-
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.25rem;
-}
-
-.section-padding {
-    padding: 4rem 2rem;
-    background-color: #fff;
-}
-
-h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-}
-
-.service-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Asigură că secțiunile se aliniază corect pe rânduri */
-    gap: 1rem; /* Adaugă spațiu între elementele containerului */
-}
-
-.service {
-    display: flex; /* Creează layout flexibil pentru alinierea orizontală */
-    align-items: center; /* Centrează imaginea și textul pe verticală */
-    background-color: #f9f9f9;
-    border: 1px solid #e6e6e6;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin: 0.5rem;
-    flex: 1 1 calc(33% - 2rem); /* Flexibil pentru 3 coloane pe desktop */
-    max-width: 350px; /* Lățime maximă uniformă */
-    text-align: left; /* Text aliniat la stânga */
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service img {
-    width: 80px; /* Dimensiune uniformă pentru imagini */
-    height: 80px;
-    margin-right: 1rem; /* Spațiu între imagine și text */
-    border-radius: 10px; /* Colțuri rotunjite */
-}
-
-.service div {
-    flex: 1; /* Permite textului să ocupe spațiul rămas */
-}
-
-.service:hover {
-    transform: translateY(-5px); /* Efect ușor la hover */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-    .service {
-        flex-direction: column; /* Imaginea deasupra textului */
-        align-items: center; /* Centrează imaginea și textul */
-        text-align: center; /* Text centrat */
-        flex: 1 1 calc(50% - 1rem); /* Două coloane pe tabletă */
-    }
-
-    .service img {
-        margin: 0 0 1rem 0; /* Spațiu sub imagine */
-    }
-}
-
-@media (max-width: 480px) {
-    .service {
-        flex: 1 1 100%; /* O coloană pe mobil */
-    }
-
-    .service img {
-        margin-bottom: 1rem; /* Spațiu suplimentar sub imagine */
     }
 }
