@@ -116,16 +116,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    let lastScrollY = window.scrollY;
+document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('header');
+    let lastScrollY = window.scrollY;
+
+    // Vizibil implicit
+    header.classList.add('show');
 
     window.addEventListener('scroll', () => {
         if (window.scrollY < lastScrollY) {
-            // Scrolling up
+            // Derulăm în sus - afișăm bara
             header.classList.add('show');
         } else {
-            // Scrolling down
+            // Derulăm în jos - ascundem bara
             header.classList.remove('show');
         }
         lastScrollY = window.scrollY;
