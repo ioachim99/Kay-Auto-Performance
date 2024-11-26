@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
             services: 'Services',
             about: 'About',
             contact: 'Contact',
-            welcome: 'Welcome to KAY Auto',
-            welcomeText: 'Complete auto services for all your needs.',
+            welcome: 'Complete Car Warranty at 80 Euros per Month!',
+            welcomeText: 'Protect your fleet with full coverage and predictable costs. Just 80 euros per vehicle, monthly. Choose Kay Auto for safety and trust.',
             ourServices: 'Our Services',
-            service1Title: 'Auto Service',
-            service1Desc: 'We offer high-quality auto repair and maintenance services.',
-            service2Title: 'Car Wash',
-            service2Desc: 'Professional car wash to keep your car clean and shiny.',
-            service3Title: 'Computerized Diagnosis',
-            service3Desc: 'Quick and accurate diagnosis for all vehicle types.',
+            service1Title: '“Bumper to Bumper” Warranty',
+            service1Desc: 'Our "Bumper to Bumper" warranty covers all essential vehicle components.',
+            service2Title: 'After-Hours Repairs',
+            service2Desc: 'We understand how important it is for your vehicles to be available during working hours.',
+            service3Title: 'Cost Predictability',
+            service3Desc: 'With our fixed-price services, you benefit from total cost predictability.',
             aboutUs: 'About Us',
-            aboutText: 'KAY Auto has been providing comprehensive and reliable auto services for over 20 years.',
+            aboutText: 'At Kay Auto, we provide complete maintenance solutions for car fleets.',
             contactUs: 'Contact Us',
             firstName: 'First Name',
             lastName: 'Last Name',
@@ -27,24 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
             submit: 'Submit',
         },
         ro: {
-            home: 'Home',
+            home: 'Acasă',
             services: 'Servicii',
-            about: 'Despre',
+            about: 'Despre noi',
             contact: 'Contact',
-            welcome: 'Bine ați venit la KAY Auto',
-            welcomeText: 'Servicii auto complete pentru toate nevoile dumneavoastră.',
+            welcome: 'Garanție Auto Completă la 80 Euro pe Lună!',
+            welcomeText: 'Protejează-ți flota cu acoperire totală și costuri predictibile. Doar 80 euro pe vehicul, lunar. Alege Kay Auto pentru siguranță și încredere.',
             ourServices: 'Serviciile Noastre',
-            service1Title: 'Service Auto',
-            service1Desc: 'Oferim servicii de reparații și întreținere auto de cea mai înaltă calitate.',
-            service2Title: 'Spălătorie Auto',
-            service2Desc: 'Spălătorie auto profesională pentru a vă menține mașina curată și strălucitoare.',
-            service3Title: 'Diagnoză Computerizată',
-            service3Desc: 'Diagnosticare rapidă și precisă pentru toate tipurile de vehicule.',
+            service1Title: 'Garanție „Bumper to Bumper”',
+            service1Desc: 'Garanția noastră „Bumper to Bumper” acoperă toate componentele esențiale ale vehiculelor.',
+            service2Title: 'Reparații în Afara Orelor de Program',
+            service2Desc: 'Înțelegem cât de important este ca vehiculele tale să fie disponibile în timpul orelor de lucru.',
+            service3Title: 'Predictibilitatea Costurilor',
+            service3Desc: 'Cu serviciile noastre la preț fix, beneficiezi de predictibilitate totală a costurilor.',
             aboutUs: 'Despre Noi',
-            aboutText: 'KAY Auto oferă servicii complete și de încredere în domeniul auto de peste 20 de ani.',
+            aboutText: 'La Kay Auto oferim soluții de întreținere complete pentru flotele auto.',
             contactUs: 'Contact',
-            firstName: 'Prenume',
-            lastName: 'Nume',
+            firstName: 'Nume',
+            lastName: 'Prenume',
             email: 'Email',
             message: 'Mesaj',
             submit: 'Trimite',
@@ -58,81 +58,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.textContent = translations[lang][key];
             }
         });
-
-        // Update links based on language if they exist
-        const service1Link = document.querySelector('.service a[data-key="service1Title"]');
-        const service2Link = document.querySelector('.service a[data-key="service2Title"]');
-        const service3Link = document.querySelector('.service a[data-key="service3Title"]');
-        if (service1Link) service1Link.setAttribute('href', `service1-${lang}.html`);
-        if (service2Link) service2Link.setAttribute('href', `service2-${lang}.html`);
-        if (service3Link) service3Link.setAttribute('href', `service3-${lang}.html`);
     }
 
     if (languageSwitcher) {
         languageSwitcher.addEventListener('change', (e) => {
             const selectedLang = e.target.value;
-            let currentPath = window.location.pathname;
-
-            // Handle language switching for index.html and subpages
-            const match = currentPath.match(/service\d+-(en|ro)\.html/);
-            if (match) {
-                // Replace the language code in the URL
-                currentPath = currentPath.replace(/-(en|ro)\.html/, `-${selectedLang}.html`);
+            
+            // Dacă este pe pagina principală, schimbăm doar limba fără redirecționare
+            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+                translatePage(selectedLang); // Aplicăm traducerile
+                document.documentElement.lang = selectedLang; // Schimbăm atributul `lang`
             } else {
-                // Handle index.html without language code
-                if (currentPath.endsWith('index.html') || currentPath === '/') {
-                    if (selectedLang === 'ro') {
-                        currentPath = '/index.html'; // Default Romanian page
-                    } else {
-                        currentPath = '/index-en.html'; // Redirect to English version
-                    }
+                // Restul paginilor - schimbăm URL-ul
+                let currentPath = window.location.pathname;
+                const match = currentPath.match(/-(en|ro)\.html/);
+                if (match) {
+                    currentPath = currentPath.replace(/-(en|ro)\.html/, `-${selectedLang}.html`);
                 }
+                window.location.pathname = currentPath;
             }
-
-            window.location.pathname = currentPath;
         });
 
-        // Initial translation based on default language
-        const currentLang = languageSwitcher.value || (window.location.pathname.includes('index-en.html') ? 'en' : 'ro');
-        translatePage(currentLang);
+        // Traducerea implicită bazată pe limba curentă
+        const defaultLang = document.documentElement.lang || 'ro';
+        translatePage(defaultLang);
     }
-
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('nav ul li a');
-    if (navLinks) {
-        navLinks.forEach(link => {
-            link.addEventListener('click', function (e) {
-                // Check if the link is pointing to an anchor on the same page
-                if (this.hash !== "" && this.pathname === window.location.pathname) {
-                    e.preventDefault();
-                    const hash = this.hash;
-                    const target = document.querySelector(hash);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                } else {
-                    // Navigate to the link normally
-                    window.location.href = this.href;
-                }
-            });
-        });
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    let lastScrollY = window.scrollY;
-    const header = document.querySelector('header');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY < lastScrollY) {
-            // Scrolling up
-            header.classList.add('show');
-        } else {
-            // Scrolling down
-            header.classList.remove('show');
-        }
-        lastScrollY = window.scrollY;
-    });
 });
