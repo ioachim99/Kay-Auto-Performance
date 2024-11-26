@@ -1,4 +1,4 @@
-/* Font and Reset CSS */
+/* Stiluri generale */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 * {
@@ -98,85 +98,96 @@ footer {
     color: #fff;
 }
 
-/* Stiluri pentru secțiunea de servicii */
-.section-padding {
+/* Stiluri pentru secțiunea "Serviciile Noastre" */
+#services {
+    padding: 4rem 2rem;
+    background-color: #fff;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.service-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
     gap: 2rem;
-    margin: 4rem auto;
-    max-width: 1200px;
 }
 
 .service {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
+    max-width: 300px;
     flex: 1 1 calc(33% - 2rem);
     text-align: center;
-    padding: 1.5rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.service img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .service h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+}
+
+.service h3 a {
     color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.service h3 a:hover {
+    color: #e67300;
 }
 
 .service p {
     font-size: 1rem;
-    line-height: 1.6;
     color: #555;
+    line-height: 1.6;
 }
 
-/* Stiluri pentru secțiunea de contact */
-.contact-section {
-    background-color: #f9f9f9;
+/* Stiluri pentru secțiunea "Contact" */
+#contact {
     padding: 4rem 2rem;
-    margin-top: 4rem;
+    background-color: #f9f9f9;
 }
 
-.contact-section h2 {
-    font-size: 2rem;
+#contact h2 {
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2rem;
     color: #333;
 }
 
-.contact-section form {
+#contact form {
     max-width: 600px;
     margin: 0 auto;
     background: #fff;
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.contact-section form label {
+#contact form label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    color: #333;
 }
 
-.contact-section form input,
-.contact-section form textarea {
+#contact form input,
+#contact form textarea {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 1rem;
@@ -185,40 +196,86 @@ footer {
     font-size: 1rem;
 }
 
-.contact-section form button {
-    display: inline-block;
+#contact form input:focus,
+#contact form textarea:focus {
+    border-color: #e67300;
+    outline: none;
+}
+
+#contact form button {
+    display: block;
+    width: 100%;
     background-color: #333;
     color: #fff;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s;
-    width: 100%;
 }
 
-.contact-section form button:hover {
+#contact form button:hover {
     background-color: #555;
+}
+
+/* Stiluri pentru secțiunea "Despre Noi" */
+#about {
+    padding: 4rem 2rem;
+    background-color: #fff;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+#about p strong {
+    color: #333;
+}
+
+#about p span {
+    color: #ff6f00;
 }
 
 /* Media Queries pentru responsive */
 
 /* Tablete */
 @media (max-width: 768px) {
-    .section-padding {
-        flex-direction: column;
-        gap: 1.5rem;
+    .service {
+        flex: 1 1 calc(45% - 2rem);
     }
 
-    .service {
-        max-width: 100%;
-        flex: 1 1 100%;
+    #about p {
+        font-size: 1.1rem;
     }
 }
 
 /* Telefoane */
 @media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .service {
+        flex: 1 1 100%;
+    }
+
     .service h3 {
         font-size: 1.25rem;
     }
@@ -227,15 +284,21 @@ footer {
         font-size: 0.9rem;
     }
 
-    .contact-section h2 {
-        font-size: 1.5rem;
+    #contact h2,
+    #services h2,
+    #about h2 {
+        font-size: 2rem;
     }
 
-    .contact-section form {
+    #contact form {
         padding: 1.5rem;
     }
 
-    .contact-section form button {
+    #contact form button {
         font-size: 0.9rem;
+    }
+
+    #about p {
+        font-size: 1rem;
     }
 }
