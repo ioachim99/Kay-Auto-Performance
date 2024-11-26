@@ -14,7 +14,6 @@ body {
     line-height: 1.6;
 }
 
-header {
  header {
     position: fixed;
     top: 0; /* Vizibil implicit */
