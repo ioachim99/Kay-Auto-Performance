@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentPath = currentPath.replace(/-(en|ro)\.html/, `-${selectedLanguage}.html`);
             } else {
                 // Replace the language code in the URL for index.html
-                currentPath = currentPath.replace(/index-(en|ro)\.html/, `index-${selectedLanguage}.html`);
+                currentPath = currentPath.replace(/index-(en)\.html/, `index-${selectedLanguage}.html`);
             }
 
             window.location.pathname = currentPath;
