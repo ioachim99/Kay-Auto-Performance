@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
- function translatePage(lang) {
+    function translatePage(lang) {
         elementsToTranslate.forEach(el => {
             const key = el.getAttribute('data-key');
             if (translations[lang] && translations[lang][key]) {
@@ -72,12 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
         languageSwitcher.addEventListener('change', (e) => {
             const selectedLang = e.target.value;
 
-            // Dacă suntem pe pagina principală, schimbăm limba fără redirecționare
             if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
                 translatePage(selectedLang);
-                document.documentElement.lang = selectedLang; // Actualizăm atributul `lang` al paginii
+                document.documentElement.lang = selectedLang;
             } else {
-                // Gestionăm alte pagini
                 let currentPath = window.location.pathname;
                 const match = currentPath.match(/-(en|ro)\.html/);
                 if (match) {
@@ -87,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Traducerea implicită pe baza limbii curente
         const currentLang = document.documentElement.lang || (window.location.pathname.includes('index-en.html') ? 'en' : 'ro');
         translatePage(currentLang);
     }
@@ -97,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navLinks) {
         navLinks.forEach(link => {
             link.addEventListener('click', function (e) {
-                // Dacă link-ul este pe aceeași pagină
                 if (this.hash !== "" && this.pathname === window.location.pathname) {
                     e.preventDefault();
                     const hash = this.hash;
@@ -108,29 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                     }
                 } else {
-                    // Navigare normală
                     window.location.href = this.href;
                 }
             });
         });
     }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('header');
-    let lastScrollY = window.scrollY;
-
-    // Vizibil implicit
-    header.classList.add('show');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY < lastScrollY) {
-            // Derulăm în sus - afișăm bara
-            header.classList.add('show');
-        } else {
-            // Derulăm în jos - ascundem bara
-            header.classList.remove('show');
-        }
-        lastScrollY = window.scrollY;
-    });
 });
