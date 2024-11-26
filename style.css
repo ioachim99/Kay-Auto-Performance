@@ -62,7 +62,7 @@ nav ul li a:hover {
 }
 
 .hero {
-    background: url('background') no-repeat center center; /* Asigură-te că `background.jpg` este în folderul images */
+    background: url('images/background.png') no-repeat center center; /* Asigură-te că `background.jpg` este în folderul images */
     background-size: cover; /* Se va extinde pentru a acoperi întreaga secțiune */
     color: #ffffff; /* Schimbă culoarea textului pentru a fi lizibil pe fundal */
     padding: 100px 20px; /* Adaugă spațiu pentru a crea un efect vizual plăcut */
