@@ -14,21 +14,21 @@ body {
     line-height: 1.6;
 }
 
- header {
+header {
     position: fixed;
-    top: -100px; /* Ascuns inițial (dacă JavaScript-ul o controlează complet) */
+    top: -100px;
     left: 0;
     width: 100%;
     background-color: #333;
     color: #fff;
     z-index: 1000;
     transition: top 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-header.show {
-    top: 0; /* Vizibil când este afișat */
-}
-
 
 .logo {
     width: 120px;
@@ -62,7 +62,7 @@ nav ul li a:hover {
 }
 
 .hero {
-    background: url('images/background.png') no-repeat center center; /* Asigură-te că `background.jpg` este în folderul images */
+    background: url('images/background.png') no-repeat center center; /* Asigură-te că background.jpg este în folderul images */
     background-size: cover; /* Se va extinde pentru a acoperi întreaga secțiune */
     color: #ffffff; /* Schimbă culoarea textului pentru a fi lizibil pe fundal */
     padding: 100px 20px; /* Adaugă spațiu pentru a crea un efect vizual plăcut */
@@ -276,4 +276,3 @@ header.show {
     display: block;
     margin: 20px auto;   /* Centrează imaginea cu un spațiu de 20px de jur împrejur */
 }
-
