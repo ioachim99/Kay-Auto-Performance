@@ -18,39 +18,42 @@ header {
     position: fixed; /* Fixează header-ul în partea de sus */
     top: 0; /* Header-ul este vizibil permanent */
     left: 0;
-    width: 100%;
-    background-color: #333; /* Culoare de fundal pentru header */
-    color: #fff; /* Culoare pentru text */
-    z-index: 1000; /* Bara de navigație apare deasupra altor elemente */
-    display: flex; /* Flexbox pentru organizarea conținutului */
+    width: 100%; /* Acoperă întreaga lățime a paginii */
+    background-color: #333; /* Fundal pentru header */
+    color: #fff; /* Text alb */
+    z-index: 1000; /* Asigură că header-ul este deasupra altor elemente */
+    display: flex; /* Flexbox pentru aranjarea elementelor */
     justify-content: space-between; /* Logoul și meniul sunt la capete opuse */
-    align-items: center; /* Centrare verticală a elementelor */
-    padding: 1rem 2rem; /* Spațiere interioară pentru un aspect curat */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Efect de umbră pentru separare */
+    align-items: center; /* Centrează vertical elementele */
+    padding: 1rem 2rem; /* Adaugă spațiu în interior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adaugă o umbră ușoară */
+    transition: none; /* Elimină orice efect de tranziție */
 }
 
 .logo {
-    width: 120px;
+    width: 120px; /* Dimensiunea logoului */
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
+    list-style: none; /* Elimină punctele implicite ale listelor */
+    display: flex; /* Elemente afișate pe orizontală */
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    margin-left: 2rem;
+    margin-left: 2rem; /* Spațiu între elementele meniului */
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    color: #fff; /* Text alb */
+    text-decoration: none; /* Elimină sublinierea textului */
+    font-weight: bold; /* Text bold pentru vizibilitate */
+    transition: color 0.3s; /* Tranziție pentru schimbarea culorii la hover */
 }
 
 nav ul li a:hover {
-    color: #e67300;
+    color: #e67300; /* Culoare portocalie la hover */
 }
 
 #language-switcher {
@@ -58,6 +61,9 @@ nav ul li a:hover {
     border: none;
     border-radius: 5px;
     font-size: 1rem;
+    background-color: #fff; /* Fundal alb pentru selector */
+    color: #333; /* Text negru */
+    cursor: pointer; /* Cursor pointer */
 }
 
 .hero {
