@@ -71,33 +71,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (languageSwitcher) {
         languageSwitcher.addEventListener('change', (e) => {
             const selectedLang = e.target.value;
-            translatePage(selectedLang);
-        });
-
-        // Initial translation based on default language
-        translatePage(languageSwitcher.value);
-    }
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Language switcher code
-    const languageSwitcher = document.getElementById('language-switcher');
-    if (languageSwitcher) {
-        languageSwitcher.addEventListener('change', function () {
-            const selectedLanguage = this.value;
             let currentPath = window.location.pathname;
 
-            // Check if the current page is in a subdirectory like 'service1-ro.html'
+            // Handle language switching for index.html and subpages
             const match = currentPath.match(/service\d+-(en|ro)\.html/);
             if (match) {
                 // Replace the language code in the URL
-                currentPath = currentPath.replace(/-(en|ro)\.html/, `-${selectedLanguage}.html`);
+                currentPath = currentPath.replace(/-(en|ro)\.html/, `-${selectedLang}.html`);
             } else {
-                // Replace the language code in the URL for index.html
-                currentPath = currentPath.replace(/index-(en|ro)\.html/, `index-${selectedLanguage}.html`);
+                // Handle index.html without language code
+                if (currentPath.endsWith('index.html')) {
+                    currentPath = currentPath.replace('index.html', `index-${selectedLang}.html`);
+                } else {
+                    // Default case for root path without index.html
+                    currentPath += `index-${selectedLang}.html`;
+                }
             }
 
             window.location.pathname = currentPath;
         });
+
+        // Initial translation based on default language
+        const currentLang = languageSwitcher.value || (window.location.pathname.includes('index.html') ? 'ro' : 'en');
+        translatePage(currentLang);
     }
 
     // Smooth scrolling for navigation links
