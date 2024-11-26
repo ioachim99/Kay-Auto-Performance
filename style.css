@@ -14,6 +14,7 @@ body {
     line-height: 1.6;
 }
 
+/* Header */
 header {
     position: fixed;
     top: 0;
@@ -65,13 +66,13 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Hero Section */
 .hero {
     background: url('images/background.png') no-repeat center center;
     background-size: cover;
     color: #ffffff;
     padding: 100px 20px;
     text-align: center;
-    position: relative;
 }
 
 .hero-content {
@@ -91,11 +92,11 @@ nav ul li a:hover {
     font-size: 1.25rem;
 }
 
-/* Secțiunea "Servicii" pentru index.html */
+/* Service Section */
 .service-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 2rem;
     max-width: 1200px;
     margin: 2rem auto;
@@ -129,14 +130,59 @@ nav ul li a:hover {
     color: #555;
 }
 
-/* Secțiunea "Contact" */
+/* Service Page */
+.service-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
+
+.service-page img {
+    max-width: 45%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 40%;
+}
+
+.service-description {
+    flex: 1 1 55%;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.service-description h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.service-description p {
+    margin-bottom: 1rem;
+}
+
+.service-description ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.service-description ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
 .contact-section {
     background-color: #f9f9f9;
     padding: 4rem 2rem;
+    text-align: center;
 }
 
 .contact-section h2 {
-    text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #333;
@@ -185,52 +231,7 @@ nav ul li a:hover {
     background-color: #555;
 }
 
-/* Stiluri pentru paginile Service */
-.service-page {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 1rem;
-}
-
-.service-page img {
-    max-width: 45%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1 1 40%;
-}
-
-.service-description {
-    flex: 1 1 55%;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-}
-
-.service-description h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.service-description p {
-    margin-bottom: 1rem;
-}
-
-.service-description ul {
-    list-style: disc;
-    margin-left: 1.5rem;
-    margin-top: 1rem;
-}
-
-.service-description ul li {
-    margin-bottom: 0.5rem;
-}
-
-/* Responsive Design pentru pagini Service și index.html */
+/* Responsive Design */
 @media (max-width: 768px) {
     .service-container,
     .service-page {
@@ -253,13 +254,16 @@ nav ul li a:hover {
 }
 
 @media (max-width: 480px) {
-    .service h3 a {
-        font-size: 1.25rem;
+    .hero h1 {
+        font-size: 2rem;
     }
 
-    .service p,
-    .service-description p {
-        font-size: 0.9rem;
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .service h3 a {
+        font-size: 1.25rem;
     }
 
     .service-description h2 {
