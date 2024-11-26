@@ -78,34 +78,32 @@ nav ul li a:hover {
     cursor: pointer; /* Cursor pointer */
 }
 
-/* Secțiunea generală pentru servicii */
 .section-padding {
     display: flex; /* Creează layout flexibil */
     flex-wrap: wrap; /* Permite rearanjarea pe dispozitive mici */
     justify-content: space-between; /* Spațiere între imagine și text */
     align-items: flex-start; /* Aliniere sus */
-    gap: 1.5rem; /* Spațiu între elemente */
-    max-width: 1200px; /* Lățime maximă pentru conținut */
+    gap: 1rem; /* Spațiu între imagine și text */
     margin: 2rem auto; /* Centrare orizontală */
-    padding: 2rem;
-    background-color: #fff;
+    max-width: 1200px; /* Lățime maximă */
 }
 
-/* Imaginea din secțiunea de servicii */
+/* Stil pentru imagine */
 .service-image {
-    max-width: 400px; /* Lățime maximă pentru imagine */
+    max-width: 350px; /* Lățime maximă pentru imagine */
     width: 100%; /* Ajustare la dimensiunea containerului */
     height: auto; /* Păstrează proporțiile imaginii */
     border-radius: 10px; /* Colțuri rotunjite */
-    flex: 1 1 40%; /* Imaginea ocupă 40% din spațiu */
+    margin: 0 auto; /* Centrează imaginea */
 }
 
-/* Textul din secțiunea de servicii */
+/* Stil pentru descriere */
 .service-description {
-    flex: 1 1 60%; /* Textul ocupă restul de 60% */
+    flex: 1; /* Textul ocupă restul spațiului */
     text-align: left; /* Text aliniat la stânga */
     font-size: 1rem;
     line-height: 1.6; /* Spațiere între linii */
+    margin: 0 1rem; /* Adaugă spațiu lateral */
     color: #333;
 }
 
@@ -134,8 +132,7 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .section-padding {
         flex-direction: column; /* Imaginea deasupra textului */
-        text-align: center; /* Text centrat */
-        align-items: center;
+        align-items: center; /* Centrează imaginea și textul */
     }
 
     .service-image {
@@ -145,6 +142,7 @@ nav ul li a:hover {
 
     .service-description {
         text-align: center; /* Text centrat */
+        margin: 0; /* Elimină spațiul lateral */
     }
 }
 
@@ -163,8 +161,6 @@ nav ul li a:hover {
     }
 }
 
-    line-height: 1.6;
-}
 
 header {
     position: fixed; /* Fixează header-ul în partea de sus */
