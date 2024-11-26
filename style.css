@@ -177,107 +177,30 @@ footer {
     color: #fff;
 }
 
-/* Media Queries for Responsive Design */
-
-/* For tablets and smaller screens */
+* Pentru dispozitive mai mici */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-direction: column; /* Organizează vertical pentru spațiu redus */
         align-items: flex-start;
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /* Meniul devine vertical */
         margin-top: 1rem;
     }
 
     nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    .hero {
-        padding: 2rem 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .service {
-        flex: 1 1 calc(50% - 2rem);
-    }
-
-    form {
-        padding: 1rem;
-    }
-
-    footer {
-        padding: 1rem;
+        margin: 0.5rem 0; /* Adaugă spațiere între elementele meniului */
     }
 }
 
-/* For mobile phones */
 @media (max-width: 480px) {
     header {
-        padding: 1rem;
+        padding: 1rem; /* Redimensionează padding-ul pentru ecrane mici */
     }
 
     .hero {
         padding: 1rem;
         height: auto;
     }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 0.875rem;
-    }
-
-    .section-padding {
-        padding: 2rem 1rem;
-    }
-
-    .service {
-        flex: 1 1 100%;
-        margin: 1rem 0;
-    }
-
-    form {
-        padding: 1rem;
-    }
-
-    footer {
-        padding: 1rem;
-    }
-}
-
-html {
-    scroll-behavior: smooth;
-}
-header {
-    position: fixed;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    z-index: 1000;
-    transition: top 0.3s ease-in-out;
-}
-
-header.show {
-    top: 0;
-}
-.service-image {
-    width: 100%;         /* Ajustează lățimea la containerul secțiunii */
-    max-width: 400px;    /* Setează o lățime maximă pentru a nu deveni prea mare */
-    height: auto;        /* Păstrează proporțiile corecte ale imaginii */
-    display: block;
-    margin: 20px auto;   /* Centrează imaginea cu un spațiu de 20px de jur împrejur */
 }
